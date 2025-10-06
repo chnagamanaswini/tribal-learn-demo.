@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TribeLearn Mobile-Like Demo</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#FFF8F0;color:#4B3B2A;}
+.top-nav{position:fixed;top:0;width:100%;background:#FF8C42;display:flex;justify-content:space-around;padding:10px 0;color:white;font-weight:bold;z-index:1000;}
+.top-nav button{background:none;border:none;color:white;cursor:pointer;font-size:14px;transition: transform 0.2s;}
+.top-nav button:hover{transform:scale(1.1);}
+section{display:none;padding:70px 15px 20px 15px;}
+section.active{display:block;}
+h2{margin-bottom:10px;text-align:center;}
+.card,.skill-card{background:#F0E1D2;border-radius:15px;padding:15px;margin-bottom:15px;box-shadow:2px 2px 10px rgba(0,0,0,0.2);}
+.card img{width:100%;border-radius:10px;}
+.skill-buttons,.card-buttons{text-align:center;margin-top:10px;}
+.skill-buttons button,.card-buttons button,.action-btn,.upload-btn{padding:10px 15px;margin:5px;border:none;border-radius:12px;cursor:pointer;font-weight:bold;transition:transform 0.2s;}
+.play-btn{background:#4CAF50;color:white;}
+.download-btn{background:#2196F3;color:white;}
+.complete-btn{background:#FF8C42;color:white;}
+.like-btn{background:#FF6F61;color:white;}
+.share-btn{background:#2196F3;color:white;}
+.listen-btn{background:#4CAF50;color:white;}
+.action-btn,.upload-btn{background:#FF8C42;color:white;}
+.skill-buttons button:hover,.card-buttons button:hover,.action-btn:hover,.upload-btn:hover{transform:scale(1.05);}
+input,textarea,select{width:100%;padding:8px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;}
+table{width:100%;border-collapse:collapse;margin-bottom:15px;}
+th,td{text-align:center;padding:6px;border:1px solid #ccc;}
+.progress-bar{background:#ddd;border-radius:12px;width:100%;height:15px;overflow:hidden;margin:10px 0;}
+.progress-fill{height:100%;border-radius:12px;}
+.progress-edu{background:#4CAF50;width:50%;}
+.progress-skill{background:#FF8C42;width:30%;}
+</style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<div class="top-nav">
+<button onclick="showSection('home')">🏠 Home</button>
+<button onclick="showSection('learning')">📚 Learning</button>
+<button onclick="showSection('heritage')">📖 Heritage</button>
+<button onclick="showSection('schemes')">📢 Schemes</button>
+<button onclick="showSection('community')">👥 Community</button>
+<button onclick="showSection('progress')">📊 Progress</button>
+<button onclick="showSection('admin')">🛠️ Admin</button>
+</div>
+
+<!-- 1️⃣ Home -->
+<section id="home" class="active">
+<h2>Welcome, Lakshmi!</h2>
+<p style="text-align:center;">Education Progress: <b>50%</b> | Skill Progress: <b>30%</b></p>
+<div class="progress-bar"><div class="progress-fill progress-edu"></div></div>
+<div class="progress-bar"><div class="progress-fill progress-skill"></div></div>
+<div class="card">🧵 Learn Skills</div>
+<div class="card">📖 Heritage & Educational Stories</div>
+<div class="card">📢 Govt Schemes (Education & Welfare)</div>
+<div class="card">👥 Community & Mentors</div>
+</section>
+
+<!-- 2️⃣ Learning Module -->
+<section id="learning">
+<h2>Learning Module</h2>
+<select><option>Telugu</option><option>Tribal Dialect</option></select>
+
+<div class="skill-card"><b>Handicrafts: Bamboo Weaving</b>
+<div class="skill-buttons"><button class="play-btn">▶️ Play</button><button class="download-btn">⬇️ Download</button><button class="complete-btn">✅ Complete</button></div></div>
+
+<div class="skill-card"><b>Farming: Organic Techniques</b>
+<div class="skill-buttons"><button class="play-btn">▶️ Play</button><button class="download-btn">⬇️ Download</button><button class="complete-btn">✅ Complete</button></div></div>
+
+<div class="skill-card"><b>Digital Basics</b>
+<div class="skill-buttons"><button class="play-btn">▶️ Play</button><button class="download-btn">⬇️ Download</button><button class="complete-btn">✅ Complete</button></div></div>
+
+<div class="skill-card"><b>Literacy: Telugu Reading</b>
+<div class="skill-buttons"><button class="play-btn">▶️ Play</button><button class="download-btn">⬇️ Download</button><button class="complete-btn">✅ Complete</button></div></div>
+
+<div class="skill-card"><b>Basic Math</b>
+<div class="skill-buttons"><button class="play-btn">▶️ Play</button><button class="download-btn">⬇️ Download</button><button class="complete-btn">✅ Complete</button></div></div>
+
+<div class="skill-card"><b>Digital Literacy</b>
+<div class="skill-buttons"><button class="play-btn">▶️ Play</button><button class="download-btn">⬇️ Download</button><button class="complete-btn">✅ Complete</button></div></div>
+</section>
+
+<!-- 3️⃣ Heritage -->
+<section id="heritage">
+<h2>Heritage & Educational Stories</h2>
+<h3>Upload Story / Craft / Educational Lesson</h3>
+<input type="text" placeholder="Title">
+<textarea placeholder="Description"></textarea>
+<input type="file" accept="image/*,audio/*,video/*">
+<button class="upload-btn">⬆️ Upload</button>
+
+<h3>Browse</h3>
+<div class="card"><img src="https://via.placeholder.com/400x200"><b>Bamboo Weaving by Gondi Tribe</b>
+<div class="card-buttons"><button class="like-btn">❤️ Like</button><button class="listen-btn">🔊 Listen</button><button class="share-btn">↗️ Share</button></div></div>
+
+<div class="card"><img src="https://via.placeholder.com/400x200"><b>Educational Story – Math Lesson</b>
+<div class="card-buttons"><button class="like-btn">❤️ Like</button><button class="listen-btn">🔊 Listen</button><button class="share-btn">↗️ Share</button></div></div>
+</section>
+
+<!-- 4️⃣ Govt Schemes -->
+<section id="schemes">
+<h2>Government Schemes</h2>
+<div class="card">📢 Skill India Tribal Handicraft Program<button class="listen-btn">🔊 Listen</button></div>
+<div class="card">📢 Scholarship for Tribal Students (Education Support)<button class="listen-btn">🔊 Listen</button></div>
+</section>
+
+<!-- 5️⃣ Community -->
+<section id="community">
+<h2>Community & Mentors</h2>
+<div class="card">🧑 Ramesh – Ask Educational Question💬 5 comments | ❤️ 3 Likes</div>
+<div class="card">🧑 Sunita – Handicraft Mentor💬 8 comments | ❤️ 10 Likes</div>
+<div class="card">🧑 Radha – Math Mentor💬 6 comments | ❤️ 4 Likes</div>
+</section>
+
+<!-- 6️⃣ Progress -->
+<section id="progress">
+<h2>Progress & Certificates</h2>
+<p>Education: 2 / 3 | Skills: 3 / 5</p>
+<div class="progress-bar"><div class="progress-fill progress-edu"></div></div>
+<div class="progress-bar"><div class="progress-fill progress-skill"></div></div>
+<div class="card">🏆 Educational Badge: Beginner Reader</div>
+<div class="card">🏆 Skill Badge: Beginner Artisan</div>
+<button class="upload-btn">📄 Download Certificate</button>
+</section>
+
+<!-- 7️⃣ Admin -->
+<section id="admin">
+<h2>Admin Dashboard</h2>
+<h3>Manage Education & Skill Content</h3>
+<button class="upload-btn">Upload Lesson / Skill</button>
+<button class="upload-btn">Upload Heritage / Educational Story</button>
+<button class="upload-btn">Upload Scheme</button>
+
+<table>
+<tr><th>Learner</th><th>Mentor</th><th>Education Progress</th><th>Skill Progress</th><th>Total Progress</th><th>Action</th></tr>
+<tr><td>Lakshmi</td><td>Radha (Math)</td><td>70%</td><td>60%</td><td>65%</td><td><button class="action-btn">View</button></td></tr>
+<tr><td>Ramesh</td><td>Sunita (Handicraft)</td><td>50%</td><td>40%</td><td>45%</td><td><button class="action-btn">View</button></td></tr>
+</table>
+</section>
+
+<script>
+function showSection(id){
+  document.querySelectorAll('section').forEach(sec=>sec.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+</body>
+</html>
